@@ -1,0 +1,159 @@
+.gallery {
+  padding: 8rem 2rem;
+  background: white;
+  position: relative;
+}
+
+.gallery-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.8rem 2rem;
+  background: white;
+  border: 2px solid var(--bg-light);
+  color: var(--text-dark);
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-btn span {
+  position: relative;
+  z-index: 2;
+}
+
+.filter-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--primary-color);
+  border-radius: 50px;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.filter-btn:hover::before {
+  transform: scale(1);
+}
+
+.filter-btn.active::before {
+  transform: scale(1);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.gallery-item {
+  opacity: 0;
+  transform: scale(0.8) rotateY(20deg);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item.visible {
+  opacity: 1;
+  transform: scale(1) rotateY(0);
+}
+
+.gallery-item-inner {
+  background: var(--bg-light);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  height: 100%;
+}
+
+.gallery-item-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transition: left 0.5s ease;
+}
+
+.gallery-item:hover .gallery-item-inner::before {
+  left: 100%;
+}
+
+.gallery-item-inner:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.gallery-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-icon {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.gallery-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.gallery-category {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    padding: 4rem 1rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

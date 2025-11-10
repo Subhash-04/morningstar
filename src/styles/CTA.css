@@ -1,0 +1,246 @@
+.cta {
+  padding: 8rem 2rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.cta-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.2;
+  animation: ctaFloat 15s infinite ease-in-out;
+}
+
+.cta-shape-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--accent-color);
+  top: -100px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.cta-shape-2 {
+  width: 300px;
+  height: 300px;
+  background: var(--secondary-color);
+  bottom: -50px;
+  left: -50px;
+  animation-delay: 5s;
+}
+
+.cta-shape-3 {
+  width: 250px;
+  height: 250px;
+  background: #ec4899;
+  top: 50%;
+  left: 50%;
+  animation-delay: 10s;
+}
+
+@keyframes ctaFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.9);
+  }
+}
+
+.cta-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.cta-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  animation: slideUp 0.8s ease 0.2s backwards;
+}
+
+.cta-subtitle {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  animation: slideUp 0.8s ease 0.4s backwards;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  animation: slideUp 0.8s ease 0.6s backwards;
+}
+
+.cta-btn {
+  padding: 1.2rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+}
+
+.cta-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.cta-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-btn-primary {
+  background: var(--accent-color);
+  color: var(--text-dark);
+  box-shadow: 0 10px 30px rgba(251, 191, 36, 0.4);
+}
+
+.cta-btn-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(251, 191, 36, 0.5);
+}
+
+.cta-btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.cta-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+.cta-info {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: slideUp 0.8s ease 0.8s backwards;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: white;
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.info-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.info-icon {
+  font-size: 1.5rem;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 4rem 1rem;
+  }
+  
+  .cta-title {
+    font-size: 2rem;
+  }
+  
+  .cta-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+  
+  .cta-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
