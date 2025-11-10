@@ -1,15 +1,18 @@
 # Morning Star Junior Inter and Degree College
 
-A professional React TypeScript website with stunning animations and modern design.
+A professional React TypeScript website with stunning 3D animations and modern design.
 
 ## Features
 
-- ✨ Professional animations and transitions
-- 🎨 Modern gradient designs
+- ✨ 3D Particle Wave Animation (Three.js)
+- 🎨 Modern light-mode design
 - 📱 Fully responsive layout
 - ⚡ Built with React & TypeScript
 - 🎯 Smooth scroll effects
 - 🌟 Interactive UI components
+- 🖼️ 3D Circular Gallery Modal
+- 📊 Animated Statistics
+- 🎭 Professional Testimonials Slider
 
 ## Installation
 
@@ -23,13 +26,20 @@ npm install
 npm start
 ```
 
-The application will open at `http://localhost:3000`
+The application will open at `http://localhost:3001`
 
 ## Build for Production
 
 ```bash
 npm run build
 ```
+
+## Deploy to Netlify
+
+The project is configured for Netlify deployment:
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Redirects are configured in `netlify.toml`
 
 ## Project Structure
 

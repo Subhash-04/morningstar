@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/Hero.css';
+import AnimatedBackground from './AnimatedBackground';
 
 const Hero: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,14 +11,7 @@ const Hero: React.FC = () => {
 
   return (
     <section className="hero" id="home">
-      <div className="hero-background">
-        <div className="floating-shapes">
-          <div className="shape shape-1"></div>
-          <div className="shape shape-2"></div>
-          <div className="shape shape-3"></div>
-          <div className="shape shape-4"></div>
-        </div>
-      </div>
+      <AnimatedBackground />
       
       <div className={`hero-content ${isVisible ? 'visible' : ''}`}>
         <h1 className="hero-title">
@@ -36,13 +30,6 @@ const Hero: React.FC = () => {
             Explore Programs
           </button>
         </div>
-      </div>
-
-      <div className="scroll-indicator">
-        <div className="mouse">
-          <div className="wheel"></div>
-        </div>
-        <p>Scroll to explore</p>
       </div>
     </section>
   );
